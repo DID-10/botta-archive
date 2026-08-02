@@ -14,15 +14,12 @@
 <style>
 
 
-/* =========================
-기본 설정
-========================= */
-
-
 * {
 
 margin:0;
+
 padding:0;
+
 box-sizing:border-box;
 
 }
@@ -75,7 +72,9 @@ align-items:center;
 
 .first-page {
 
+
 height:100vh;
+
 
 justify-content:center;
 
@@ -91,6 +90,7 @@ linear-gradient(
 #e46fc2
 
 );
+
 
 }
 
@@ -110,33 +110,21 @@ color:white;
 
 animation:
 
-floatLogo 3s infinite ease-in-out;
+float 3s infinite ease-in-out;
 
 
 }
 
 
 
-@keyframes floatLogo {
-
-
-0% {
-
-transform:translateY(0);
-
-}
+@keyframes float {
 
 
 50% {
 
+
 transform:translateY(-15px);
 
-}
-
-
-100% {
-
-transform:translateY(0);
 
 }
 
@@ -162,14 +150,11 @@ color:white;
 
 
 /* =========================
-2페이지 영상 도감
+2페이지
 ========================= */
 
 
-.second-page {
-
-
-min-height:100vh;
+.archive {
 
 
 background:#fafafa;
@@ -240,7 +225,6 @@ cursor:pointer;
 
 box-shadow:
 
-
 0 10px 30px rgba(0,0,0,0.1);
 
 
@@ -290,11 +274,14 @@ font-size:20px;
 
 
 /* =========================
-3페이지 상세
+상세 화면
 ========================= */
 
 
-.detail-page {
+.detail {
+
+
+display:none;
 
 
 min-height:100vh;
@@ -304,9 +291,6 @@ background:white;
 
 
 padding:60px;
-
-
-justify-content:flex-start;
 
 
 }
@@ -329,23 +313,17 @@ margin-bottom:40px;
 
 
 
-.detail-title {
+.detail h1 {
 
 
 font-size:50px;
-
-
-font-weight:900;
 
 
 }
 
 
 
-.video-image {
-
-
-width:100%;
+.video {
 
 
 height:350px;
@@ -392,7 +370,7 @@ line-height:2;
 
 
 
-.legend-title {
+.legend {
 
 
 margin-top:70px;
@@ -438,7 +416,6 @@ font-size:70px;
 }
 
 
-
 </style>
 
 
@@ -455,7 +432,7 @@ font-size:70px;
 ========================= -->
 
 
-<section class="page first-page">
+<section class="page first-page" id="home">
 
 
 <div class="logo">
@@ -483,7 +460,7 @@ font-size:70px;
 ========================= -->
 
 
-<section class="page second-page" id="archive">
+<section class="page archive" id="archive">
 
 
 <div class="title">
@@ -509,7 +486,6 @@ font-size:70px;
 </div>
 
 
-
 <div class="card-text">
 
 첫 번째 영상 제목
@@ -521,9 +497,7 @@ font-size:70px;
 </div>
 
 
-
 </div>
-
 
 
 
@@ -540,10 +514,6 @@ font-size:70px;
 <div class="card-text">
 
 두 번째 영상 제목
-
-<br>
-
-날짜
 
 </div>
 
@@ -566,10 +536,6 @@ font-size:70px;
 
 세 번째 영상 제목
 
-<br>
-
-날짜
-
 </div>
 
 
@@ -588,30 +554,31 @@ font-size:70px;
 
 
 <!-- =========================
-3페이지 상세
+상세 페이지
 ========================= -->
 
 
-<section class="page detail-page" id="detail">
+<section class="detail" id="detail">
+
 
 
 <div class="back" onclick="backArchive()">
 
-← 영상 목록
+← 돌아가기
 
 </div>
 
 
 
-<div class="detail-title">
+<h1>
 
 첫 번째 영상 제목
 
-</div>
+</h1>
 
 
 
-<div class="video-image">
+<div class="video">
 
 📷
 
@@ -621,7 +588,7 @@ font-size:70px;
 
 <div class="info">
 
-업로드 날짜 : 2025.00.00
+날짜 : 2025.00.00
 
 <br>
 
@@ -631,7 +598,7 @@ font-size:70px;
 
 
 
-<div class="legend-title">
+<div class="legend">
 
 🔥 레전드 짤 도감
 
@@ -657,12 +624,31 @@ font-size:70px;
 <script>
 
 
+let archivePosition = 0;
+
+
+
 function openDetail(){
 
 
-document
-.getElementById("detail")
-.scrollIntoView();
+/* 현재 2페이지 위치 저장 */
+
+
+archivePosition = window.scrollY;
+
+
+
+/* 상세 화면 표시 */
+
+
+document.getElementById("archive").style.display="none";
+
+
+document.getElementById("detail").style.display="block";
+
+
+
+window.scrollTo(0,0);
 
 
 
@@ -670,12 +656,28 @@ document
 
 
 
+
 function backArchive(){
 
 
-document
-.getElementById("archive")
-.scrollIntoView();
+/* 상세 숨기기 */
+
+
+document.getElementById("detail").style.display="none";
+
+
+
+/* 2페이지 다시 표시 */
+
+
+document.getElementById("archive").style.display="flex";
+
+
+
+/* 원래 위치 복귀 */
+
+
+window.scrollTo(0,archivePosition);
 
 
 
