@@ -1,10 +1,8 @@
-<!DOCTYPE html> <!-- HTML5 문서 시작 -->
+<!DOCTYPE html>
 
-<html lang="ko"> <!-- 웹페이지 전체 시작 -->
+<html lang="ko">
 
-
-<head> <!-- 설정 시작 -->
-
+<head>
 
 <meta charset="UTF-8">
 
@@ -15,18 +13,17 @@
 
 <style>
 
+
 /* =========================
-   기본 설정
+기본 설정
 ========================= */
 
 
 * {
 
-  margin:0;
-
-  padding:0;
-
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 
 }
 
@@ -34,7 +31,7 @@
 
 html {
 
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 
 }
 
@@ -42,55 +39,58 @@ html {
 
 body {
 
-  overflow-x:hidden;
+font-family:sans-serif;
 
-  font-family:sans-serif;
+overflow-x:hidden;
 
 }
 
 
 
 /* =========================
-   페이지 공통
+페이지 공통
 ========================= */
 
 
 .page {
 
-  width:100vw;
+width:100vw;
 
-  min-height:100vh;
+min-height:100vh;
 
-  display:flex;
+display:flex;
 
-  justify-content:center;
+flex-direction:column;
 
-  align-items:center;
-
-  flex-direction:column;
+align-items:center;
 
 }
 
 
 
 /* =========================
-   1페이지
+1페이지
 ========================= */
 
 
 .first-page {
 
-  background:
+height:100vh;
 
-  linear-gradient(
+justify-content:center;
 
-  135deg,
 
-  #db4ea7,
+background:
 
-  #e46fc2
+linear-gradient(
 
-  );
+135deg,
+
+#db4ea7,
+
+#e46fc2
+
+);
 
 }
 
@@ -98,15 +98,20 @@ body {
 
 .logo {
 
-  font-size:90px;
 
-  font-weight:900;
+font-size:90px;
 
-  color:white;
 
-  animation:
+font-weight:900;
 
-  floatLogo 3s infinite ease-in-out;
+
+color:white;
+
+
+animation:
+
+floatLogo 3s infinite ease-in-out;
+
 
 }
 
@@ -142,28 +147,39 @@ transform:translateY(0);
 
 .arrow {
 
-  margin-top:100px;
 
-  font-size:50px;
+margin-top:100px;
 
-  color:white;
+
+font-size:50px;
+
+
+color:white;
+
 
 }
 
 
 
 /* =========================
-   2페이지 영상 목록
+2페이지 영상 도감
 ========================= */
 
 
 .second-page {
 
-  background:#fafafa;
 
-  padding:60px;
+min-height:100vh;
 
-  justify-content:flex-start;
+
+background:#fafafa;
+
+
+padding:60px;
+
+
+justify-content:flex-start;
+
 
 }
 
@@ -171,11 +187,15 @@ transform:translateY(0);
 
 .title {
 
-  font-size:55px;
 
-  font-weight:900;
+font-size:55px;
 
-  margin-bottom:50px;
+
+font-weight:900;
+
+
+margin-bottom:50px;
+
 
 }
 
@@ -183,13 +203,18 @@ transform:translateY(0);
 
 .video-list {
 
-  width:100%;
 
-  display:grid;
+width:100%;
 
-  grid-template-columns:repeat(2,1fr);
 
-  gap:40px;
+display:grid;
+
+
+grid-template-columns:repeat(2,1fr);
+
+
+gap:40px;
+
 
 }
 
@@ -197,19 +222,27 @@ transform:translateY(0);
 
 .card {
 
-  height:280px;
 
-  background:white;
+height:280px;
 
-  border-radius:20px;
 
-  padding:20px;
+background:white;
 
-  cursor:pointer;
 
-  box-shadow:
+border-radius:20px;
 
-  0 10px 30px rgba(0,0,0,0.1);
+
+padding:20px;
+
+
+cursor:pointer;
+
+
+box-shadow:
+
+
+0 10px 30px rgba(0,0,0,0.1);
+
 
 }
 
@@ -217,19 +250,27 @@ transform:translateY(0);
 
 .thumbnail {
 
-  height:160px;
 
-  background:#ddd;
+height:160px;
 
-  border-radius:15px;
 
-  display:flex;
+background:#ddd;
 
-  justify-content:center;
 
-  align-items:center;
+border-radius:15px;
 
-  font-size:40px;
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+font-size:40px;
+
 
 }
 
@@ -237,28 +278,36 @@ transform:translateY(0);
 
 .card-text {
 
-  margin-top:20px;
 
-  font-size:20px;
+margin-top:20px;
+
+
+font-size:20px;
+
 
 }
 
 
 
 /* =========================
-   3페이지 상세
+3페이지 상세
 ========================= */
 
 
 .detail-page {
 
-  min-height:100vh;
 
-  background:white;
+min-height:100vh;
 
-  padding:60px;
 
-  display:none;
+background:white;
+
+
+padding:60px;
+
+
+justify-content:flex-start;
+
 
 }
 
@@ -266,11 +315,15 @@ transform:translateY(0);
 
 .back {
 
-  font-size:22px;
 
-  cursor:pointer;
+font-size:22px;
 
-  margin-bottom:40px;
+
+cursor:pointer;
+
+
+margin-bottom:40px;
+
 
 }
 
@@ -278,9 +331,12 @@ transform:translateY(0);
 
 .detail-title {
 
-  font-size:50px;
 
-  font-weight:900;
+font-size:50px;
+
+
+font-weight:900;
+
 
 }
 
@@ -289,23 +345,31 @@ transform:translateY(0);
 .video-image {
 
 
-  margin-top:40px;
-
-  height:350px;
-
-  background:#ddd;
-
-  border-radius:20px;
+width:100%;
 
 
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
+height:350px;
 
 
-  font-size:80px;
+margin-top:40px;
+
+
+background:#ddd;
+
+
+border-radius:20px;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+font-size:80px;
 
 
 }
@@ -314,11 +378,15 @@ transform:translateY(0);
 
 .info {
 
-  margin-top:30px;
 
-  font-size:22px;
+margin-top:30px;
 
-  line-height:2;
+
+font-size:22px;
+
+
+line-height:2;
+
 
 }
 
@@ -327,57 +395,44 @@ transform:translateY(0);
 .legend-title {
 
 
-  margin-top:70px;
-
-  font-size:40px;
-
-}
+margin-top:70px;
 
 
-
-.legend-card {
-
-
-  margin-top:30px;
-
-  width:400px;
-
-
-  padding:20px;
-
-
-  background:#f7f7f7;
-
-
-  border-radius:20px;
+font-size:40px;
 
 
 }
 
 
 
-.legend-image {
+.legend-box {
 
 
-  height:250px;
+width:400px;
 
 
-  background:#ddd;
+height:300px;
 
 
-  border-radius:15px;
+margin-top:30px;
 
 
-  display:flex;
+background:#f5f5f5;
 
 
-  justify-content:center;
+border-radius:20px;
 
 
-  align-items:center;
+display:flex;
 
 
-  font-size:70px;
+justify-content:center;
+
+
+align-items:center;
+
+
+font-size:70px;
 
 
 }
@@ -392,12 +447,15 @@ transform:translateY(0);
 
 
 <body>
-<!-- 화면 시작 -->
 
+
+
+<!-- =========================
+1페이지
+========================= -->
 
 
 <section class="page first-page">
-<!-- 1페이지 -->
 
 
 <div class="logo">
@@ -420,8 +478,12 @@ transform:translateY(0);
 
 
 
-<section class="page second-page">
-<!-- 2페이지 -->
+<!-- =========================
+2페이지
+========================= -->
+
+
+<section class="page second-page" id="archive">
 
 
 <div class="title">
@@ -436,7 +498,8 @@ transform:translateY(0);
 
 
 
-<div class="card" onclick="openVideo()">
+<div class="card" onclick="openDetail()">
+
 
 
 <div class="thumbnail">
@@ -444,6 +507,7 @@ transform:translateY(0);
 📷
 
 </div>
+
 
 
 <div class="card-text">
@@ -457,7 +521,9 @@ transform:translateY(0);
 </div>
 
 
+
 </div>
+
 
 
 
@@ -473,7 +539,7 @@ transform:translateY(0);
 
 <div class="card-text">
 
-영상 제목
+두 번째 영상 제목
 
 <br>
 
@@ -498,32 +564,7 @@ transform:translateY(0);
 
 <div class="card-text">
 
-영상 제목
-
-<br>
-
-날짜
-
-</div>
-
-
-</div>
-
-
-
-<div class="card">
-
-
-<div class="thumbnail">
-
-📷
-
-</div>
-
-
-<div class="card-text">
-
-영상 제목
+세 번째 영상 제목
 
 <br>
 
@@ -545,13 +586,18 @@ transform:translateY(0);
 
 
 
-<section class="detail-page" id="detail">
-<!-- 3페이지 상세 -->
+
+<!-- =========================
+3페이지 상세
+========================= -->
 
 
-<div class="back" onclick="backList()">
+<section class="page detail-page" id="detail">
 
-← 목록으로
+
+<div class="back" onclick="backArchive()">
+
+← 영상 목록
 
 </div>
 
@@ -593,29 +639,9 @@ transform:translateY(0);
 
 
 
-<div class="legend-card">
-
-
-<div class="legend-image">
+<div class="legend-box">
 
 📸
-
-</div>
-
-
-<p>
-
-시간 : 03:24
-
-</p>
-
-
-<p>
-
-김원식 레전드 장면 설명
-
-</p>
-
 
 </div>
 
@@ -627,35 +653,30 @@ transform:translateY(0);
 
 
 
+
 <script>
 
 
-function openVideo(){
+function openDetail(){
 
 
-document.querySelector(".second-page").style.display="none";
+document
+.getElementById("detail")
+.scrollIntoView();
 
-
-document.querySelector(".detail-page").style.display="block";
-
-
-window.scrollTo(0,0);
 
 
 }
 
 
 
-function backList(){
+function backArchive(){
 
 
-document.querySelector(".detail-page").style.display="none";
+document
+.getElementById("archive")
+.scrollIntoView();
 
-
-document.querySelector(".second-page").style.display="flex";
-
-
-window.scrollTo(0,document.body.scrollHeight);
 
 
 }
@@ -667,6 +688,5 @@ window.scrollTo(0,document.body.scrollHeight);
 
 
 </body>
-
 
 </html>
