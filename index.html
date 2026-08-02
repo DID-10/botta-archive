@@ -11,9 +11,6 @@
 
 <style>
 
-/* =========================
-기본 설정
-========================= */
 
 *{
     margin:0;
@@ -50,7 +47,6 @@ body{
     flex-direction:column;
 
     background:
-
     linear-gradient(
         135deg,
         #db4ea7,
@@ -58,6 +54,7 @@ body{
     );
 
 }
+
 
 
 .logo{
@@ -78,9 +75,7 @@ body{
 @keyframes float{
 
     50%{
-
         transform:translateY(-15px);
-
     }
 
 }
@@ -91,21 +86,21 @@ body{
 
     margin-top:100px;
 
-    font-size:50px;
-
     color:white;
+
+    font-size:50px;
 
 }
 
 
 
 /* =========================
-2페이지 짤 도감
+2페이지
+김원식 짤 도감
 ========================= */
 
 
 .archive{
-
 
     min-height:100vh;
 
@@ -119,13 +114,11 @@ body{
 
 .title{
 
-
     font-size:55px;
 
     font-weight:900;
 
     margin-bottom:50px;
-
 
 }
 
@@ -133,20 +126,17 @@ body{
 
 .jjal-list{
 
-
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
     gap:40px;
 
-
 }
 
 
 
 .card{
-
 
     height:350px;
 
@@ -158,14 +148,10 @@ body{
 
     cursor:pointer;
 
-
     box-shadow:
-
     0 10px 30px rgba(0,0,0,0.1);
 
-
     transition:0.3s;
-
 
 }
 
@@ -181,13 +167,11 @@ body{
 
 .jjal-image{
 
-
     height:220px;
 
     background:#ddd;
 
     border-radius:20px;
-
 
     display:flex;
 
@@ -195,9 +179,7 @@ body{
 
     align-items:center;
 
-
     font-size:70px;
-
 
 }
 
@@ -205,24 +187,21 @@ body{
 
 .card-title{
 
-
     margin-top:20px;
 
     font-size:25px;
 
     font-weight:900;
 
-
 }
 
 
-.card-info{
 
+.card-grade{
 
     margin-top:10px;
 
-    color:#777;
-
+    font-size:20px;
 
 }
 
@@ -235,34 +214,25 @@ body{
 
 .detail{
 
-
     display:none;
 
-
     position:fixed;
-
 
     top:0;
 
     left:0;
 
-
     width:100vw;
 
     height:100vh;
 
-
     background:white;
-
 
     z-index:10;
 
-
     padding:60px;
 
-
     overflow-y:auto;
-
 
 }
 
@@ -270,13 +240,11 @@ body{
 
 .back{
 
-
     font-size:22px;
 
     cursor:pointer;
 
     margin-bottom:40px;
-
 
 }
 
@@ -284,11 +252,9 @@ body{
 
 .detail-title{
 
-
     font-size:55px;
 
     font-weight:900;
-
 
 }
 
@@ -296,20 +262,15 @@ body{
 
 .detail-image{
 
-
     width:700px;
 
     height:450px;
 
-
     margin-top:40px;
-
 
     background:#ddd;
 
-
     border-radius:30px;
-
 
     display:flex;
 
@@ -317,9 +278,7 @@ body{
 
     align-items:center;
 
-
     font-size:120px;
-
 
 }
 
@@ -327,15 +286,23 @@ body{
 
 .detail-info{
 
-
     margin-top:40px;
-
 
     font-size:22px;
 
-
     line-height:2;
 
+}
+
+
+
+.attack{
+
+    margin-top:50px;
+
+    font-size:35px;
+
+    font-weight:900;
 
 }
 
@@ -343,11 +310,9 @@ body{
 
 .grade{
 
+    margin-top:40px;
 
-    margin-top:50px;
-
-
-    font-size:35px;
+    font-size:30px;
 
 }
 
@@ -391,12 +356,14 @@ body{
 
 
 
+
 <!-- =========================
 2페이지
 ========================= -->
 
 
-<section class="archive" id="archive">
+<section class="archive">
+
 
 
 <div class="title">
@@ -431,9 +398,9 @@ body{
 
 
 
-<div class="card-info">
+<div class="card-grade">
 
-나온 영상 : 준비중
+D컵
 
 </div>
 
@@ -462,9 +429,9 @@ body{
 </div>
 
 
-<div class="card-info">
+<div class="card-grade">
 
-나온 영상 : 준비중
+C컵
 
 </div>
 
@@ -493,9 +460,9 @@ body{
 </div>
 
 
-<div class="card-info">
+<div class="card-grade">
 
-나온 영상 : 준비중
+B컵
 
 </div>
 
@@ -540,7 +507,6 @@ body{
 
 
 
-
 <div class="detail-image">
 
 📸
@@ -549,11 +515,10 @@ body{
 
 
 
-
 <div class="detail-info">
 
 
-출처 영상 :
+출처 영상:
 
 준비중
 
@@ -561,30 +526,49 @@ body{
 <br>
 
 
-등장 시간 :
+등장 시간:
 
 03:24
 
 
-<br>
+</div>
 
 
-상황 설명 :
 
-김원식 레전드 장면 설명
 
+<div class="attack">
+
+조지는 방법
 
 </div>
 
+
+
+<div class="detail-info">
+
+- 표정으로 압박
+
+<br>
+
+- 타이밍 공격
+
+<br>
+
+- 반복 사용 가능
+
+</div>
 
 
 
 <div class="grade">
 
-레전드 지수 ⭐⭐⭐⭐⭐
+등급:
+
+<br>
+
+D컵
 
 </div>
-
 
 
 
@@ -603,7 +587,7 @@ history.scrollRestoration="manual";
 
 window.onload=function(){
 
-window.scrollTo(0,0);
+    window.scrollTo(0,0);
 
 };
 
@@ -615,14 +599,11 @@ let scrollPosition=0;
 
 function openDetail(){
 
+    scrollPosition=window.scrollY;
 
-scrollPosition=window.scrollY;
-
-
-document
-.getElementById("detail")
-.style.display="block";
-
+    document
+    .getElementById("detail")
+    .style.display="block";
 
 }
 
@@ -630,17 +611,14 @@ document
 
 function closeDetail(){
 
+    document
+    .getElementById("detail")
+    .style.display="none";
 
-document
-.getElementById("detail")
-.style.display="none";
 
-
-window.scrollTo(0,scrollPosition);
-
+    window.scrollTo(0,scrollPosition);
 
 }
-
 
 
 </script>
