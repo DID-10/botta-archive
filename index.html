@@ -294,7 +294,6 @@ body{
 </head>
 
 
-
 <body>
 
 
@@ -486,6 +485,19 @@ body{
 
 
 <script>
+
+
+// 새로고침 시 스크롤 위치 초기화
+
+history.scrollRestoration = "manual";
+
+
+window.onload = function(){
+
+    window.scrollTo(0,0);
+
+};
+
 
 
 let scrollPosition = 0;
