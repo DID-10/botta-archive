@@ -1,24 +1,25 @@
-<!DOCTYPE html> <!-- HTML5 문서 시작 -->
+<!DOCTYPE html> <!-- HTML5 시작 -->
 
-<html lang="ko"> <!-- 웹페이지 전체 시작 -->
+<html lang="ko"> <!-- 웹페이지 시작 -->
 
 
-<head> <!-- 설정 영역 시작 -->
+<head> <!-- 설정 시작 -->
 
 
 <meta charset="UTF-8">
-<!-- 한글 깨짐 방지 -->
+<!-- 한글 설정 -->
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 모바일 화면 대응 -->
+<!-- 모바일 대응 -->
 
 
 <title>보따 도감</title>
-<!-- 브라우저 탭 이름 -->
+<!-- 페이지 제목 -->
 
 
 <style>
+
 
 /* =========================
    기본 설정
@@ -27,16 +28,14 @@
 
 * {
 
-  margin:0;
-  /* 기본 여백 제거 */
+margin:0;
+/* 기본 여백 제거 */
 
+padding:0;
+/* 기본 여백 제거 */
 
-  padding:0;
-  /* 기본 안쪽 여백 제거 */
-
-
-  box-sizing:border-box;
-  /* 크기 계산 방식 */
+box-sizing:border-box;
+/* 크기 계산 */
 
 }
 
@@ -44,81 +43,39 @@
 
 body {
 
-  overflow-x:hidden;
-  /* 좌우 스크롤 제거 */
+font-family:sans-serif;
+/* 기본 폰트 */
 
-
-  overflow-y:auto;
-  /* 휠 가능 */
+overflow:hidden;
+/* 스크롤 제거 */
 
 }
 
 
 
 /* =========================
-   첫 번째 화면
+   페이지 공통
 ========================= */
 
 
 .page {
 
 
-  height:100vh;
-  /* 화면 한 장 크기 */
+width:100vw;
+
+height:100vh;
 
 
-  display:flex;
-  /* 정렬 */
+display:flex;
 
 
-  flex-direction:column;
-  /* 위아래 배치 */
+justify-content:center;
 
 
-  justify-content:center;
-  /* 세로 중앙 */
+align-items:center;
 
 
-  align-items:center;
-  /* 가로 중앙 */
-
-
-
-  position:relative;
-  /* 배경 기준 */
-
-
-
-  overflow:hidden;
-  /* 화면 밖 숨김 */
-
-
-
-  background:
-
-  radial-gradient(
-
-    circle at center,
-
-    #e46fc2 0%,
-    /* 중심 밝은 핑크 */
-
-
-    #db4ea7 25%,
-    /* 중간 핑크 */
-
-
-    #e46fc2 50%,
-    /* 반복 */
-
-
-    #db4ea7 75%,
-    /* 반복 */
-
-
-    #e46fc2 100%
-
-  );
+flex-direction:column;
 
 
 
@@ -127,36 +84,75 @@ body {
 
 
 /* =========================
-   제목
+   첫 번째 페이지
 ========================= */
+
+
+.first-page {
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#db4ea7,
+
+#e46fc2
+
+);
+
+
+
+}
+
+
+
+/* 제목 */
 
 
 .logo {
 
 
-  position:relative;
+font-size:90px;
 
 
-  z-index:2;
+font-weight:900;
 
 
-  font-size:90px;
+color:white;
 
 
-  font-weight:900;
-
-
-  color:white;
-
-
-  letter-spacing:-6px;
+}
 
 
 
-  text-shadow:
+/* 입장 버튼 */
 
-  0 10px 30px rgba(0,0,0,0.18);
 
+.enter {
+
+
+margin-top:80px;
+
+
+padding:20px 60px;
+
+
+border-radius:50px;
+
+
+background:white;
+
+
+color:#db4ea7;
+
+
+font-size:25px;
+
+
+cursor:pointer;
 
 
 }
@@ -164,138 +160,145 @@ body {
 
 
 /* =========================
-   혀 전체
-========================= */
-
-
-.tongues {
-
-
-  position:relative;
-
-
-  z-index:2;
-
-
-  width:100%;
-
-
-  display:flex;
-
-
-  justify-content:space-around;
-
-
-  align-items:center;
-
-
-  margin-top:80px;
-
-
-}
-
-
-
-/* =========================
-   혀 하나
-========================= */
-
-
-.tongue {
-
-
-  font-size:70px;
-
-
-  display:block;
-
-
-  animation:
-
-  tongueStretch 0.1s infinite alternate;
-
-
-
-}
-
-
-
-/* =========================
-   혀 위아래 변형
-========================= */
-
-
-@keyframes tongueStretch {
-
-
-  from {
-
-
-    transform:
-
-    scaleY(0.15);
-
-
-
-  }
-
-
-  to {
-
-
-    transform:
-
-    scaleY(2.2);
-
-
-
-  }
-
-
-
-}
-
-
-
-/* =========================
-   아래 화살표
-========================= */
-
-
-.arrow {
-
-
-  position:relative;
-
-
-  z-index:2;
-
-
-  margin-top:80px;
-
-
-  font-size:50px;
-
-
-  color:white;
-
-
-}
-
-
-
-/* =========================
-   두 번째 화면
+   두 번째 페이지
 ========================= */
 
 
 .second-page {
 
 
-  height:100vh;
+background:#fafafa;
 
 
-  background:white;
+display:none;
+
+
+padding:50px;
+
+
+justify-content:flex-start;
+
+
+}
+
+
+
+/* 상단 제목 */
+
+
+.title {
+
+
+font-size:50px;
+
+
+font-weight:bold;
+
+
+margin-bottom:50px;
+
+
+}
+
+
+
+/* =========================
+   영상 카드 영역
+========================= */
+
+
+.video-list {
+
+
+width:100%;
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+
+gap:40px;
+
+
+}
+
+
+
+/* 카드 */
+
+
+.card {
+
+
+height:280px;
+
+
+border-radius:20px;
+
+
+background:white;
+
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,0.1);
+
+
+padding:20px;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+/* 썸네일 공간 */
+
+
+.thumbnail {
+
+
+height:160px;
+
+
+background:#ddd;
+
+
+border-radius:15px;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+font-size:40px;
+
+
+}
+
+
+
+/* 카드 글 */
+
+
+.card-text {
+
+
+margin-top:20px;
+
+
+font-size:20px;
 
 
 }
@@ -306,70 +309,31 @@ body {
 
 
 </head>
-<!-- 설정 끝 -->
 
 
 
 <body>
-<!-- 화면 표시 시작 -->
+<!-- 화면 시작 -->
 
 
 
-<section class="page">
-<!-- 첫 번째 페이지 -->
-
+<section class="page first-page" id="first">
+<!-- 첫 페이지 -->
 
 
 <div class="logo">
+
 보따 도감
-</div>
-<!-- 제목 -->
-
-
-
-<div class="tongues">
-<!-- 혀 공간 -->
-
-
-<div class="tongue">👅</div>
-<!-- 혀 -->
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
-
-<div class="tongue">👅</div>
-
 
 </div>
 
 
 
-<div class="arrow">
-↓
+<div class="enter" onclick="openArchive()">
+
+도감 보기
+
 </div>
-<!-- 아래 이동 표시 -->
 
 
 </section>
@@ -377,16 +341,156 @@ body {
 
 
 
-<section class="second-page">
-<!-- 두 번째 화면 -->
+<section class="page second-page" id="archive">
+<!-- 두 번째 페이지 -->
+
+
+<div class="title">
+
+보따 영상 도감
+
+</div>
+
+
+
+<div class="video-list">
+
+
+
+<div class="card">
+
+
+<div class="thumbnail">
+
+📷
+
+</div>
+
+
+<div class="card-text">
+
+영상 제목
+
+<br>
+
+날짜
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<div class="thumbnail">
+
+📷
+
+</div>
+
+
+<div class="card-text">
+
+영상 제목
+
+<br>
+
+날짜
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<div class="thumbnail">
+
+📷
+
+</div>
+
+
+<div class="card-text">
+
+영상 제목
+
+<br>
+
+날짜
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+
+<div class="thumbnail">
+
+📷
+
+</div>
+
+
+<div class="card-text">
+
+영상 제목
+
+<br>
+
+날짜
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
 
 </section>
 
+
+
+<script>
+
+
+function openArchive(){
+
+/* 첫 화면 숨김 */
+
+document.getElementById("first").style.display="none";
+
+
+/* 두 번째 화면 표시 */
+
+document.getElementById("archive").style.display="flex";
+
+
+}
+
+
+
+</script>
 
 
 </body>
-<!-- 화면 끝 -->
 
 
 </html>
-<!-- 문서 끝 -->
