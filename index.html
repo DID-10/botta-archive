@@ -1,0 +1,127 @@
+<!DOCTYPE html> <!-- HTML5 문서 시작 -->
+
+<html lang="ko"> <!-- 웹페이지 시작, 한국어 설정 -->
+
+<head> <!-- 설정 영역 시작 -->
+
+  <meta charset="UTF-8"> <!-- 한글 깨짐 방지 -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- 모바일 화면 대응 -->
+
+  <title>보따 도감</title>
+  <!-- 브라우저 탭 이름 -->
+
+
+  <style>
+  /* 디자인 설정 시작 */
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* 기본 여백 제거 */
+
+
+    body {
+      background: white;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    /* 전체 배경과 글씨 설정 */
+
+
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    /* 첫 화면을 가운데 정렬 */
+
+
+    .logo {
+      font-size: 80px;
+      font-weight: 900;
+    }
+    /* 보따 도감 글씨 */
+
+
+    .tongue {
+      font-size: 80px;
+      margin-top: 40px;
+      animation: lick 1s infinite;
+    }
+    /* 혀 이미지 자리 */
+
+
+    @keyframes lick {
+
+      50% {
+        transform: translateY(15px);
+      }
+
+    }
+    /* 낼름 움직임 */
+
+
+    .scroll {
+      margin-top: 50px;
+      opacity: 0.5;
+    }
+    /* 스크롤 안내 */
+
+
+    .second-page {
+      height: 100vh;
+    }
+    /* 두 번째 빈 페이지 */
+
+
+  </style>
+
+</head>
+
+
+<body> <!-- 화면에 보이는 부분 시작 -->
+
+
+  <section class="page">
+  <!-- 첫 번째 화면 -->
+
+
+    <div class="logo">
+      보따 도감
+    </div>
+    <!-- 사이트 이름 -->
+
+
+    <div class="tongue">
+      👅
+    </div>
+    <!-- 나중에 혀 이미지로 교체 -->
+
+
+    <div class="scroll">
+      ↓ Scroll
+    </div>
+    <!-- 아래로 내리라는 표시 -->
+
+
+  </section>
+
+
+
+  <section class="second-page">
+  <!-- 두 번째 화면 (현재 비어있음) -->
+
+
+  </section>
+
+
+</body>
+
+</html>
