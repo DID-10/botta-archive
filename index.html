@@ -1,9 +1,10 @@
-<!DOCTYPE html> <!-- HTML 문서 시작 -->
+<!DOCTYPE html> <!-- HTML5 문서 시작 -->
 
 <html lang="ko"> <!-- 웹페이지 전체 시작 -->
 
 
 <head> <!-- 설정 시작 -->
+
 
 <meta charset="UTF-8">
 
@@ -18,13 +19,17 @@
    기본 설정
 ========================= */
 
+
 * {
 
   margin:0;
+
   padding:0;
+
   box-sizing:border-box;
 
 }
+
 
 
 html {
@@ -34,10 +39,12 @@ html {
 }
 
 
+
 body {
 
   overflow-x:hidden;
-  overflow-y:auto;
+
+  font-family:sans-serif;
 
 }
 
@@ -51,6 +58,7 @@ body {
 .page {
 
   width:100vw;
+
   min-height:100vh;
 
   display:flex;
@@ -66,8 +74,7 @@ body {
 
 
 /* =========================
-   1페이지 배경
-   여기 수정
+   1페이지
 ========================= */
 
 
@@ -76,19 +83,17 @@ body {
   background:
 
   linear-gradient(
-    135deg,
-    #db4ea7,
-    #e46fc2
+
+  135deg,
+
+  #db4ea7,
+
+  #e46fc2
+
   );
 
 }
 
-
-
-/* =========================
-   보따 도감 제목
-   여기 수정
-========================= */
 
 
 .logo {
@@ -99,14 +104,6 @@ body {
 
   color:white;
 
-  letter-spacing:-5px;
-
-
-  text-shadow:
-
-  0 10px 30px rgba(0,0,0,0.15);
-
-
   animation:
 
   floatLogo 3s infinite ease-in-out;
@@ -115,40 +112,32 @@ body {
 
 
 
-/* 제목 움직임 */
-
-
 @keyframes floatLogo {
 
 
-  0% {
+0% {
 
-    transform:translateY(0);
-
-  }
-
-
-  50% {
-
-    transform:translateY(-15px);
-
-  }
-
-
-  100% {
-
-    transform:translateY(0);
-
-  }
-
+transform:translateY(0);
 
 }
 
 
+50% {
 
-/* =========================
-   아래 화살표
-========================= */
+transform:translateY(-15px);
+
+}
+
+
+100% {
+
+transform:translateY(0);
+
+}
+
+
+}
+
 
 
 .arrow {
@@ -159,36 +148,16 @@ body {
 
   color:white;
 
-
-  animation:
-
-  arrowMove 1.5s infinite;
-
-}
-
-
-
-@keyframes arrowMove {
-
-
-  50% {
-
-    transform:translateY(15px);
-
-  }
-
-
 }
 
 
 
 /* =========================
-   2페이지
+   2페이지 영상 목록
 ========================= */
 
 
 .second-page {
-
 
   background:#fafafa;
 
@@ -198,9 +167,6 @@ body {
 
 }
 
-
-
-/* 2페이지 제목 */
 
 
 .title {
@@ -215,69 +181,185 @@ body {
 
 
 
-/* =========================
-   영상 카드 영역
-========================= */
-
-
 .video-list {
-
 
   width:100%;
 
-
   display:grid;
 
-
-  grid-template-columns:
-
-  repeat(2,1fr);
-
+  grid-template-columns:repeat(2,1fr);
 
   gap:40px;
-
 
 }
 
 
 
-/* =========================
-   영상 카드
-   나중에 디자인 수정
-========================= */
-
-
 .card {
-
 
   height:280px;
 
-
   background:white;
-
 
   border-radius:20px;
 
-
   padding:20px;
 
+  cursor:pointer;
 
   box-shadow:
 
   0 10px 30px rgba(0,0,0,0.1);
 
+}
+
+
+
+.thumbnail {
+
+  height:160px;
+
+  background:#ddd;
+
+  border-radius:15px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:40px;
 
 }
 
 
 
-/* 썸네일 자리 */
+.card-text {
+
+  margin-top:20px;
+
+  font-size:20px;
+
+}
 
 
-.thumbnail {
+
+/* =========================
+   3페이지 상세
+========================= */
 
 
-  height:160px;
+.detail-page {
+
+  min-height:100vh;
+
+  background:white;
+
+  padding:60px;
+
+  display:none;
+
+}
+
+
+
+.back {
+
+  font-size:22px;
+
+  cursor:pointer;
+
+  margin-bottom:40px;
+
+}
+
+
+
+.detail-title {
+
+  font-size:50px;
+
+  font-weight:900;
+
+}
+
+
+
+.video-image {
+
+
+  margin-top:40px;
+
+  height:350px;
+
+  background:#ddd;
+
+  border-radius:20px;
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+
+  font-size:80px;
+
+
+}
+
+
+
+.info {
+
+  margin-top:30px;
+
+  font-size:22px;
+
+  line-height:2;
+
+}
+
+
+
+.legend-title {
+
+
+  margin-top:70px;
+
+  font-size:40px;
+
+}
+
+
+
+.legend-card {
+
+
+  margin-top:30px;
+
+  width:400px;
+
+
+  padding:20px;
+
+
+  background:#f7f7f7;
+
+
+  border-radius:20px;
+
+
+}
+
+
+
+.legend-image {
+
+
+  height:250px;
 
 
   background:#ddd;
@@ -295,23 +377,7 @@ body {
   align-items:center;
 
 
-  font-size:40px;
-
-
-}
-
-
-
-/* 카드 글 */
-
-
-.card-text {
-
-
-  margin-top:20px;
-
-
-  font-size:20px;
+  font-size:70px;
 
 
 }
@@ -322,7 +388,6 @@ body {
 
 
 </head>
-<!-- 설정 끝 -->
 
 
 
@@ -354,6 +419,7 @@ body {
 
 
 
+
 <section class="page second-page">
 <!-- 2페이지 -->
 
@@ -370,7 +436,8 @@ body {
 
 
 
-<div class="card">
+<div class="card" onclick="openVideo()">
+
 
 <div class="thumbnail">
 
@@ -378,12 +445,17 @@ body {
 
 </div>
 
+
 <div class="card-text">
 
-영상 제목<br>
+첫 번째 영상 제목
+
+<br>
+
 날짜
 
 </div>
+
 
 </div>
 
@@ -391,18 +463,24 @@ body {
 
 <div class="card">
 
+
 <div class="thumbnail">
 
 📷
 
 </div>
 
+
 <div class="card-text">
 
-영상 제목<br>
+영상 제목
+
+<br>
+
 날짜
 
 </div>
+
 
 </div>
 
@@ -410,18 +488,24 @@ body {
 
 <div class="card">
 
+
 <div class="thumbnail">
 
 📷
 
 </div>
 
+
 <div class="card-text">
 
-영상 제목<br>
+영상 제목
+
+<br>
+
 날짜
 
 </div>
+
 
 </div>
 
@@ -429,18 +513,24 @@ body {
 
 <div class="card">
 
+
 <div class="thumbnail">
 
 📷
 
 </div>
 
+
 <div class="card-text">
 
-영상 제목<br>
+영상 제목
+
+<br>
+
 날짜
 
 </div>
+
 
 </div>
 
@@ -453,9 +543,130 @@ body {
 
 
 
+
+
+<section class="detail-page" id="detail">
+<!-- 3페이지 상세 -->
+
+
+<div class="back" onclick="backList()">
+
+← 목록으로
+
+</div>
+
+
+
+<div class="detail-title">
+
+첫 번째 영상 제목
+
+</div>
+
+
+
+<div class="video-image">
+
+📷
+
+</div>
+
+
+
+<div class="info">
+
+업로드 날짜 : 2025.00.00
+
+<br>
+
+영상 링크 : 준비중
+
+</div>
+
+
+
+<div class="legend-title">
+
+🔥 레전드 짤 도감
+
+</div>
+
+
+
+<div class="legend-card">
+
+
+<div class="legend-image">
+
+📸
+
+</div>
+
+
+<p>
+
+시간 : 03:24
+
+</p>
+
+
+<p>
+
+김원식 레전드 장면 설명
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+function openVideo(){
+
+
+document.querySelector(".second-page").style.display="none";
+
+
+document.querySelector(".detail-page").style.display="block";
+
+
+window.scrollTo(0,0);
+
+
+}
+
+
+
+function backList(){
+
+
+document.querySelector(".detail-page").style.display="none";
+
+
+document.querySelector(".second-page").style.display="flex";
+
+
+window.scrollTo(0,document.body.scrollHeight);
+
+
+}
+
+
+
+</script>
+
+
+
 </body>
-<!-- 화면 끝 -->
 
 
 </html>
-<!-- 웹페이지 끝 -->
