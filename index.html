@@ -1,17 +1,17 @@
 <!DOCTYPE html> <!-- HTML5 문서 시작 -->
 
-<html lang="ko"> <!-- 웹페이지 전체 시작 -->
+<html lang="ko"> <!-- 웹페이지 시작 -->
 
 
 <head> <!-- 설정 영역 시작 -->
 
 
 <meta charset="UTF-8">
-<!-- 한글 표시 설정 -->
+<!-- 한글 설정 -->
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 화면 크기 대응 -->
+<!-- 화면 대응 -->
 
 
 <title>보따 도감</title>
@@ -28,13 +28,15 @@
 
 * {
 
-  margin: 0;
+  margin:0;
   /* 기본 여백 제거 */
 
-  padding: 0;
+
+  padding:0;
   /* 기본 안쪽 여백 제거 */
 
-  box-sizing: border-box;
+
+  box-sizing:border-box;
   /* 크기 계산 */
 
 }
@@ -43,53 +45,119 @@
 
 body {
 
-  overflow-x: hidden;
-  /* 가로 스크롤 제거 */
+  overflow:hidden;
+  /* 화면 밖 숨김 */
 
 }
 
 
 
 /* =========================
-   첫 화면
+   첫 번째 페이지
 ========================= */
 
 
 .page {
 
-  height: 100vh;
-  /* 화면 전체 높이 */
+
+  height:100vh;
+  /* 화면 전체 */
 
 
-  display: flex;
-  /* 정렬 사용 */
+  display:flex;
+  /* 정렬 */
 
 
-  flex-direction: column;
+  flex-direction:column;
   /* 세로 배치 */
 
 
-  justify-content: center;
-  /* 세로 중앙 */
+  justify-content:center;
+  /* 중앙 정렬 */
 
 
-  align-items: center;
-  /* 가로 중앙 */
+  align-items:center;
+  /* 중앙 정렬 */
 
+
+
+  position:relative;
+  /* 배경 기준 */
+
+
+  overflow:hidden;
+
+
+
+  background:#db4ea7;
+  /* 기본 색 */
+
+}
+
+
+
+/* =========================
+   별 모양 배경
+   중심에서 퍼지는 효과
+========================= */
+
+
+.page::before {
+
+
+  content:"";
+  /* 가상 배경 생성 */
+
+
+  position:absolute;
+  /* 화면 배치 */
+
+
+  width:160%;
+  height:160%;
+
+
+  left:50%;
+  top:50%;
+
+
+  transform:
+  translate(-50%,-50%);
 
 
   background:
 
-  linear-gradient(
-    135deg,
+  repeating-conic-gradient(
 
-    #db4ea7,
-    /* 진한 핑크 */
+    from 0deg,
 
-    #e46fc2
-    /* 밝은 핑크 */
+    #db4ea7 0deg 20deg,
+
+    #e46fc2 20deg 40deg
 
   );
+
+
+  clip-path:
+
+  polygon(
+
+  50% 0%,
+  61% 35%,
+  100% 35%,
+  68% 57%,
+  80% 100%,
+  50% 75%,
+  20% 100%,
+  32% 57%,
+  0% 35%,
+  39% 35%
+
+  );
+
+
+  opacity:0.9;
+
 
 }
 
@@ -102,48 +170,60 @@ body {
 
 .logo {
 
-  font-size: 90px;
-  /* 글씨 크기 */
+
+  position:relative;
+  /* 배경 위 표시 */
 
 
-  font-weight: 900;
-  /* 두꺼운 글씨 */
+  z-index:2;
 
 
-  color: white;
-  /* 글씨 색 */
+  font-size:90px;
 
 
-  letter-spacing: -6px;
-  /* 글자 간격 */
+  font-weight:900;
+
+
+  color:white;
+
+
+  letter-spacing:-6px;
 
 
   text-shadow:
 
-  0 8px 25px rgba(0,0,0,0.15);
-  /* 고급스러운 그림자 */
+  0 10px 30px rgba(0,0,0,0.2);
+
 
 }
 
 
 
 /* =========================
-   혀 영역
+   혀 전체
 ========================= */
 
 
 .tongues {
 
-  display: flex;
-  /* 가로 정렬 */
+
+  position:relative;
 
 
-  gap: 25px;
-  /* 혀 사이 간격 */
+  z-index:2;
 
 
-  margin-top: 80px;
-  /* 제목과 거리 */
+  display:flex;
+
+
+  width:100%;
+
+
+  justify-content:space-around;
+
+
+  margin-top:80px;
+
 
 }
 
@@ -156,61 +236,45 @@ body {
 
 .tongue {
 
-  font-size: 70px;
-  /* 혀 크기 */
 
-
-  display: block;
+  font-size:65px;
 
 
   animation:
 
-  insaneLick 0.12s infinite alternate;
-  /* 매우 빠른 움직임 */
+  tongueMove 0.08s infinite alternate;
+
 
 }
 
 
 
 /* =========================
-   혀 위아래 변형
+   미친 속도 위아래 변화
 ========================= */
 
 
-@keyframes insaneLick {
+@keyframes tongueMove {
 
 
-  0% {
+  from {
 
 
     transform:
 
-    scaleY(0.35);
-    /* 짧아짐 */
+    scaleY(0.2);
+
 
   }
 
 
-
-  50% {
-
-
-    transform:
-
-    scaleY(1.8);
-    /* 길어짐 */
-
-  }
-
-
-
-  100% {
+  to {
 
 
     transform:
 
-    scaleY(0.35);
-    /* 다시 줄어듦 */
+    scaleY(2);
+
 
   }
 
@@ -227,19 +291,20 @@ body {
 .arrow {
 
 
-  margin-top: 80px;
-  /* 위치 */
+  position:relative;
 
 
-  font-size: 45px;
-  /* 크기 */
+  z-index:2;
+
+
+  margin-top:80px;
 
 
   color:white;
-  /* 색 */
 
 
-  opacity:0.8;
+  font-size:50px;
+
 
 }
 
@@ -252,8 +317,9 @@ body {
 
 .second-page {
 
-  height:100vh;
-  /* 빈 화면 */
+
+height:100vh;
+
 
 }
 
@@ -263,47 +329,45 @@ body {
 
 
 </head>
-<!-- 설정 끝 -->
 
 
 
 <body>
-<!-- 화면 시작 -->
+<!-- 화면 표시 시작 -->
 
 
 
 <section class="page">
-<!-- 첫 번째 화면 -->
+<!-- 첫 화면 -->
+
 
 
 <div class="logo">
 보따 도감
 </div>
-<!-- 사이트 이름 -->
+<!-- 제목 -->
+
 
 
 <div class="tongues">
-<!-- 혀 모음 -->
+<!-- 혀 공간 -->
 
 
 <div class="tongue">👅</div>
-<!-- 혀 1 -->
-
 
 <div class="tongue">👅</div>
-<!-- 혀 2 -->
-
 
 <div class="tongue">👅</div>
-<!-- 혀 3 -->
-
 
 <div class="tongue">👅</div>
-<!-- 혀 4 -->
-
 
 <div class="tongue">👅</div>
-<!-- 혀 5 -->
+
+<div class="tongue">👅</div>
+
+<div class="tongue">👅</div>
+
+<div class="tongue">👅</div>
 
 
 </div>
@@ -313,7 +377,8 @@ body {
 <div class="arrow">
 ↓
 </div>
-<!-- 아래 이동 표시 -->
+<!-- 아래 이동 -->
+
 
 
 </section>
@@ -321,15 +386,12 @@ body {
 
 
 <section class="second-page">
-<!-- 두 번째 페이지 -->
 
 </section>
 
 
 
 </body>
-<!-- 화면 끝 -->
 
 
 </html>
-<!-- 문서 끝 -->
