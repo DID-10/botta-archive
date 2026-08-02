@@ -1,127 +1,379 @@
 <!DOCTYPE html> <!-- HTML5 문서 시작 -->
 
-<html lang="ko"> <!-- 웹페이지 시작, 한국어 설정 -->
-
-<head> <!-- 설정 영역 시작 -->
-
-  <meta charset="UTF-8"> <!-- 한글 깨짐 방지 -->
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <!-- 모바일 화면 대응 -->
-
-  <title>보따 도감</title>
-  <!-- 브라우저 탭 이름 -->
+<html lang="ko"> <!-- 웹페이지 전체 시작, 한국어 설정 -->
 
 
-  <style>
-  /* 디자인 설정 시작 */
+<head> <!-- 웹페이지 설정 영역 시작 -->
 
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    /* 기본 여백 제거 */
+<meta charset="UTF-8">
+<!-- 한글이 깨지지 않게 설정 -->
 
 
-    body {
-      background: white;
-      color: black;
-      font-family: Arial, sans-serif;
-    }
-    /* 전체 배경과 글씨 설정 */
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 모바일에서도 화면 크기에 맞게 표시 -->
 
 
-    .page {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    /* 첫 화면을 가운데 정렬 */
+<title>보따 도감</title>
+<!-- 브라우저 탭에 표시되는 이름 -->
 
 
-    .logo {
-      font-size: 80px;
-      font-weight: 900;
-    }
-    /* 보따 도감 글씨 */
+
+<style> 
+/* =========================
+   디자인(CSS) 시작
+========================= */
 
 
-    .tongue {
-      font-size: 80px;
-      margin-top: 40px;
-      animation: lick 1s infinite;
-    }
-    /* 혀 이미지 자리 */
+
+/* 모든 요소 기본 설정 */
+
+* {
+
+  margin: 0; 
+  /* 기본 바깥 여백 제거 */
+
+  padding: 0;
+  /* 기본 안쪽 여백 제거 */
+
+  box-sizing: border-box;
+  /* 크기 계산 방식 설정 */
+
+}
 
 
-    @keyframes lick {
 
-      50% {
-        transform: translateY(15px);
-      }
+/* 웹페이지 전체 */
 
-    }
-    /* 낼름 움직임 */
+body {
 
+  overflow-x: hidden;
+  /* 가로 스크롤 방지 */
 
-    .scroll {
-      margin-top: 50px;
-      opacity: 0.5;
-    }
-    /* 스크롤 안내 */
+}
 
 
-    .second-page {
-      height: 100vh;
-    }
-    /* 두 번째 빈 페이지 */
+
+/* =========================
+   첫 번째 화면
+   여기 배경 수정
+========================= */
 
 
-  </style>
+.page {
+
+  height: 100vh;
+  /* 화면 높이만큼 사용 */
+
+
+  display: flex;
+  /* 가운데 정렬을 위한 설정 */
+
+
+  flex-direction: column;
+  /* 세로 방향 배치 */
+
+
+  justify-content: center;
+  /* 위아래 가운데 정렬 */
+
+
+  align-items: center;
+  /* 좌우 가운데 정렬 */
+
+
+
+  background:
+
+  repeating-linear-gradient(
+    135deg,
+
+    #db4ea7 0px,
+    /* 첫 번째 핑크 */
+
+    #db4ea7 80px,
+
+    #e46fc2 80px,
+    /* 두 번째 핑크 */
+
+    #e46fc2 160px
+  );
+
+}
+
+
+
+/* =========================
+   보따 도감 제목
+   여기 글씨 수정
+========================= */
+
+
+.logo {
+
+
+  font-size: 80px;
+  /* 글씨 크기 */
+
+
+  font-weight: 900;
+  /* 글씨 두께 */
+
+
+  color: white;
+  /* 글씨 색 */
+
+
+  letter-spacing: -5px;
+  /* 글자 간격 */
+
+
+  text-shadow:
+
+  3px 3px 0px rgba(0,0,0,0.15);
+  /* 그림자 */
+
+}
+
+
+
+/* =========================
+   혀 전체 공간
+========================= */
+
+
+.tongues {
+
+
+  display: flex;
+  /* 가로 정렬 */
+
+
+  gap: 20px;
+  /* 혀 사이 간격 */
+
+
+  margin-top: 70px;
+  /* 제목과 거리 */
+
+}
+
+
+
+/* =========================
+   혀 하나
+========================= */
+
+
+.tongue {
+
+
+  font-size: 65px;
+  /* 혀 크기 */
+
+
+  display: inline-block;
+  /* 움직임 적용 */
+
+
+  animation:
+
+  crazyLick 0.35s infinite alternate;
+  /* 과격한 낼름 */
+
+}
+
+
+
+/* =========================
+   혀 움직임
+   여기 수정하면 강도 변경
+========================= */
+
+
+@keyframes crazyLick {
+
+
+  0% {
+
+
+    transform:
+
+    translateY(0)
+
+    rotate(-20deg)
+
+    scaleY(1);
+
+  }
+
+
+
+  50% {
+
+
+    transform:
+
+    translateY(-25px)
+
+    rotate(25deg)
+
+    scaleY(1.4);
+
+  }
+
+
+
+  100% {
+
+
+    transform:
+
+    translateY(20px)
+
+    rotate(-30deg)
+
+    scaleY(0.8);
+
+  }
+
+
+}
+
+
+
+
+/* =========================
+   아래 화살표
+========================= */
+
+
+.arrow {
+
+
+  margin-top: 70px;
+  /* 혀와 거리 */
+
+
+  font-size: 50px;
+  /* 화살표 크기 */
+
+
+  color: white;
+  /* 색 */
+
+
+  animation:
+
+  down 1s infinite;
+
+}
+
+
+
+
+@keyframes down {
+
+
+  50% {
+
+    transform: translateY(20px);
+
+  }
+
+
+}
+
+
+
+/* =========================
+   두 번째 화면
+   현재 비어있음
+========================= */
+
+
+.second-page {
+
+  height: 100vh;
+
+}
+
+
+
+/* CSS 끝 */
+
+</style>
+
 
 </head>
-
-
-<body> <!-- 화면에 보이는 부분 시작 -->
-
-
-  <section class="page">
-  <!-- 첫 번째 화면 -->
-
-
-    <div class="logo">
-      보따 도감
-    </div>
-    <!-- 사이트 이름 -->
-
-
-    <div class="tongue">
-      👅
-    </div>
-    <!-- 나중에 혀 이미지로 교체 -->
-
-
-    <div class="scroll">
-      ↓ Scroll
-    </div>
-    <!-- 아래로 내리라는 표시 -->
-
-
-  </section>
+<!-- 설정 영역 끝 -->
 
 
 
-  <section class="second-page">
-  <!-- 두 번째 화면 (현재 비어있음) -->
+<body>
+<!-- 화면에 실제 표시되는 부분 시작 -->
 
 
-  </section>
+
+<section class="page">
+<!-- 첫 번째 화면 -->
+
+
+<div class="logo">
+보따 도감
+</div>
+<!-- 제목 -->
+
+
+<div class="tongues">
+<!-- 혀 여러 개가 들어가는 공간 -->
+
+
+<div class="tongue">👅</div>
+<!-- 혀 1 -->
+
+
+<div class="tongue">👅</div>
+<!-- 혀 2 -->
+
+
+<div class="tongue">👅</div>
+<!-- 혀 3 -->
+
+
+<div class="tongue">👅</div>
+<!-- 혀 4 -->
+
+
+<div class="tongue">👅</div>
+<!-- 혀 5 -->
+
+
+</div>
+
+
+
+<div class="arrow">
+↓
+</div>
+<!-- 아래 이동 표시 -->
+
+
+</section>
+
+
+
+
+<section class="second-page">
+<!-- 두 번째 화면 -->
+
+</section>
+
 
 
 </body>
+<!-- 화면 영역 끝 -->
+
 
 </html>
+<!-- 웹페이지 끝 -->
