@@ -8,9 +8,7 @@
 
 <title>보따 도감</title>
 
-
 <style>
-
 
 *{
     margin:0;
@@ -18,23 +16,19 @@
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
 
-
 body{
-    font-family:sans-serif;
     overflow-x:hidden;
+    font-family:sans-serif;
 }
 
 
-
 /* =========================
-1페이지
+   1페이지
 ========================= */
-
 
 .home{
 
@@ -56,7 +50,6 @@ body{
 }
 
 
-
 .logo{
 
     color:white;
@@ -65,17 +58,30 @@ body{
 
     font-weight:900;
 
-    animation:
-    float 3s infinite ease-in-out;
+    animation:float 3s infinite ease-in-out;
 
 }
 
+
+.subtitle{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
 
 
 @keyframes float{
 
     50%{
+
         transform:translateY(-15px);
+
     }
 
 }
@@ -94,9 +100,9 @@ body{
 
 
 
+
 /* =========================
-2페이지
-김원식 짤 도감
+   2페이지
 ========================= */
 
 
@@ -104,9 +110,9 @@ body{
 
     min-height:100vh;
 
-    background:#fafafa;
-
     padding:60px;
+
+    background:#fafafa;
 
 }
 
@@ -124,7 +130,7 @@ body{
 
 
 
-.jjal-list{
+.card-list{
 
     display:grid;
 
@@ -136,9 +142,12 @@ body{
 
 
 
+/* 카드 */
+
+
 .card{
 
-    height:350px;
+    position:relative;
 
     background:white;
 
@@ -151,10 +160,9 @@ body{
     box-shadow:
     0 10px 30px rgba(0,0,0,0.1);
 
-    transition:0.3s;
+    transition:.3s;
 
 }
-
 
 
 .card:hover{
@@ -165,9 +173,35 @@ body{
 
 
 
-.jjal-image{
+/* 등급 */
 
-    height:220px;
+.grade{
+
+    position:absolute;
+
+    top:20px;
+
+    right:20px;
+
+    background:#111;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    font-weight:900;
+
+}
+
+
+
+/* 짤 이미지 */
+
+.image{
+
+    height:230px;
 
     background:#ddd;
 
@@ -185,23 +219,15 @@ body{
 
 
 
-.card-title{
+/* 짤 이름 */
+
+.name{
 
     margin-top:20px;
 
     font-size:25px;
 
     font-weight:900;
-
-}
-
-
-
-.card-grade{
-
-    margin-top:10px;
-
-    font-size:20px;
 
 }
 
@@ -232,17 +258,15 @@ body{
 
     padding:60px;
 
-    overflow-y:auto;
-
 }
 
 
 
 .back{
 
-    font-size:22px;
-
     cursor:pointer;
+
+    font-size:22px;
 
     margin-bottom:40px;
 
@@ -250,11 +274,13 @@ body{
 
 
 
-.detail-title{
+.detail-box{
 
-    font-size:55px;
+    display:flex;
 
-    font-weight:900;
+    gap:60px;
+
+    align-items:flex-start;
 
 }
 
@@ -262,11 +288,9 @@ body{
 
 .detail-image{
 
-    width:700px;
+    width:550px;
 
-    height:450px;
-
-    margin-top:40px;
+    height:400px;
 
     background:#ddd;
 
@@ -278,17 +302,15 @@ body{
 
     align-items:center;
 
-    font-size:120px;
+    font-size:100px;
 
 }
 
 
 
-.detail-info{
+.info{
 
-    margin-top:40px;
-
-    font-size:22px;
+    font-size:25px;
 
     line-height:2;
 
@@ -296,23 +318,13 @@ body{
 
 
 
-.attack{
+.skill{
 
-    margin-top:50px;
+    margin-top:40px;
 
     font-size:35px;
 
     font-weight:900;
-
-}
-
-
-
-.grade{
-
-    margin-top:40px;
-
-    font-size:30px;
 
 }
 
@@ -328,10 +340,7 @@ body{
 <body>
 
 
-
-<!-- =========================
-1페이지
-========================= -->
+<!-- 1페이지 -->
 
 
 <section class="home">
@@ -340,6 +349,13 @@ body{
 <div class="logo">
 
 보따 도감
+
+</div>
+
+
+<div class="subtitle">
+
+김원식 짤 카드 도감
 
 </div>
 
@@ -357,54 +373,47 @@ body{
 
 
 
-<!-- =========================
-2페이지
-========================= -->
+<!-- 2페이지 -->
 
 
 <section class="archive">
 
 
-
 <div class="title">
 
-김원식 짤 도감
+김원식 짤 카드 도감
 
 </div>
 
 
 
-<div class="jjal-list">
+<div class="card-list">
 
 
 
 <div class="card" onclick="openDetail()">
 
 
-
-<div class="jjal-image">
-
-📸
-
-</div>
-
-
-
-<div class="card-title">
-
-레전드 표정
-
-</div>
-
-
-
-<div class="card-grade">
+<div class="grade">
 
 D컵
 
 </div>
 
 
+<div class="image">
+
+📸
+
+</div>
+
+
+<div class="name">
+
+레전드 표정
+
+</div>
+
 
 </div>
 
@@ -415,29 +424,28 @@ D컵
 <div class="card">
 
 
-<div class="jjal-image">
-
-📸
-
-</div>
-
-
-<div class="card-title">
-
-웃참 실패
-
-</div>
-
-
-<div class="card-grade">
+<div class="grade">
 
 C컵
 
 </div>
 
 
+<div class="image">
+
+📸
+
 </div>
 
+
+<div class="name">
+
+웃참 실패
+
+</div>
+
+
+</div>
 
 
 
@@ -446,23 +454,23 @@ C컵
 <div class="card">
 
 
-<div class="jjal-image">
+<div class="grade">
+
+B컵
+
+</div>
+
+
+<div class="image">
 
 📸
 
 </div>
 
 
-<div class="card-title">
+<div class="name">
 
 화난 김원식
-
-</div>
-
-
-<div class="card-grade">
-
-B컵
 
 </div>
 
@@ -481,14 +489,10 @@ B컵
 
 
 
-
-<!-- =========================
-짤 상세
-========================= -->
+<!-- 상세 페이지 -->
 
 
 <div class="detail" id="detail">
-
 
 
 <div class="back" onclick="closeDetail()">
@@ -499,11 +503,7 @@ B컵
 
 
 
-<div class="detail-title">
-
-레전드 표정
-
-</div>
+<div class="detail-box">
 
 
 
@@ -515,61 +515,60 @@ B컵
 
 
 
-<div class="detail-info">
+<div class="info">
 
 
-출처 영상:
+<h1>
 
-준비중
+레전드 표정
+
+</h1>
 
 
 <br>
 
 
-등장 시간:
+출처 영상
 
-03:24
+<br>
+
+등장 시간
+
+<br>
 
 
-</div>
 
-
-
-
-<div class="attack">
+<div class="skill">
 
 조지는 방법
 
 </div>
 
 
-
-<div class="detail-info">
-
-- 표정으로 압박
+- 표정 공격
 
 <br>
 
 - 타이밍 공격
 
-<br>
-
-- 반복 사용 가능
-
-</div>
 
 
+<br><br>
 
-<div class="grade">
 
-등급:
+등급
 
 <br>
 
 D컵
 
+
+
 </div>
 
+
+
+</div>
 
 
 </div>
@@ -587,23 +586,20 @@ history.scrollRestoration="manual";
 
 window.onload=function(){
 
-    window.scrollTo(0,0);
+window.scrollTo(0,0);
 
-};
+}
 
 
 
-let scrollPosition=0;
-
+let y=0;
 
 
 function openDetail(){
 
-    scrollPosition=window.scrollY;
+y=window.scrollY;
 
-    document
-    .getElementById("detail")
-    .style.display="block";
+document.getElementById("detail").style.display="block";
 
 }
 
@@ -611,14 +607,12 @@ function openDetail(){
 
 function closeDetail(){
 
-    document
-    .getElementById("detail")
-    .style.display="none";
+document.getElementById("detail").style.display="none";
 
-
-    window.scrollTo(0,scrollPosition);
+window.scrollTo(0,y);
 
 }
+
 
 
 </script>
