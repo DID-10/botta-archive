@@ -79,13 +79,10 @@ body{
 @keyframes float{
 
     50%{
-
         transform:translateY(-15px);
-
     }
 
 }
-
 
 
 .arrow{
@@ -97,7 +94,6 @@ body{
     font-size:50px;
 
 }
-
 
 
 
@@ -117,7 +113,6 @@ body{
 }
 
 
-
 .title{
 
     font-size:55px;
@@ -129,7 +124,6 @@ body{
 }
 
 
-
 .card-list{
 
     display:grid;
@@ -139,7 +133,6 @@ body{
     gap:40px;
 
 }
-
 
 
 /* 카드 */
@@ -157,8 +150,7 @@ body{
 
     cursor:pointer;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.1);
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
 
     transition:.3s;
 
@@ -172,8 +164,8 @@ body{
 }
 
 
-
 /* 등급 */
+
 
 .grade{
 
@@ -196,8 +188,8 @@ body{
 }
 
 
+/* 이미지 */
 
-/* 짤 이미지 */
 
 .image{
 
@@ -218,8 +210,8 @@ body{
 }
 
 
+/* 이름 */
 
-/* 짤 이름 */
 
 .name{
 
@@ -233,8 +225,9 @@ body{
 
 
 
+
 /* =========================
-상세 페이지
+   상세 페이지
 ========================= */
 
 
@@ -245,21 +238,20 @@ body{
     position:fixed;
 
     top:0;
-
     left:0;
 
     width:100vw;
-
     height:100vh;
 
     background:white;
 
-    z-index:10;
+    z-index:100;
 
-    padding:60px;
+    padding:50px 70px;
+
+    overflow-y:auto;
 
 }
-
 
 
 .back{
@@ -270,27 +262,31 @@ body{
 
     margin-bottom:40px;
 
-}
+    font-weight:bold;
 
+}
 
 
 .detail-box{
 
     display:flex;
 
-    gap:60px;
+    gap:70px;
 
     align-items:flex-start;
+
+    max-width:1500px;
+
+    margin:auto;
 
 }
 
 
-
 .detail-image{
 
-    width:550px;
+    width:45%;
 
-    height:400px;
+    aspect-ratio:4/3;
 
     background:#ddd;
 
@@ -302,25 +298,40 @@ body{
 
     align-items:center;
 
-    font-size:100px;
+    font-size:120px;
+
+    flex-shrink:0;
 
 }
-
 
 
 .info{
 
-    font-size:25px;
+    width:55%;
 
-    line-height:2;
+    font-size:24px;
+
+    line-height:2.2;
+
+    padding-bottom:80px;
 
 }
 
+
+.info h1{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+}
 
 
 .skill{
 
     margin-top:40px;
+
+    margin-bottom:15px;
 
     font-size:35px;
 
@@ -329,22 +340,17 @@ body{
 }
 
 
-
 </style>
 
-
 </head>
-
-
 
 <body>
 
 
+
 <!-- 1페이지 -->
 
-
 <section class="home">
-
 
 <div class="logo">
 
@@ -352,20 +358,17 @@ body{
 
 </div>
 
-
 <div class="subtitle">
 
 김원식 짤 카드 도감
 
 </div>
 
-
 <div class="arrow">
 
 ↓
 
 </div>
-
 
 </section>
 
@@ -375,9 +378,7 @@ body{
 
 <!-- 2페이지 -->
 
-
 <section class="archive">
-
 
 <div class="title">
 
@@ -386,101 +387,63 @@ body{
 </div>
 
 
-
 <div class="card-list">
-
 
 
 <div class="card" onclick="openDetail()">
 
-
 <div class="grade">
-
 D컵
-
 </div>
-
 
 <div class="image">
-
 📸
-
 </div>
 
-
 <div class="name">
-
 레전드 표정
-
 </div>
 
-
 </div>
-
-
 
 
 
 <div class="card">
 
-
 <div class="grade">
-
 C컵
-
 </div>
-
 
 <div class="image">
-
 📸
-
 </div>
-
 
 <div class="name">
-
 웃참 실패
-
 </div>
 
-
 </div>
-
-
 
 
 
 <div class="card">
 
-
 <div class="grade">
-
 B컵
-
 </div>
-
 
 <div class="image">
-
 📸
-
 </div>
-
 
 <div class="name">
-
 화난 김원식
+</div>
 
 </div>
 
 
 </div>
-
-
-
-</div>
-
 
 </section>
 
@@ -494,7 +457,6 @@ B컵
 
 <div class="detail" id="detail">
 
-
 <div class="back" onclick="closeDetail()">
 
 ← 돌아가기
@@ -502,9 +464,7 @@ B컵
 </div>
 
 
-
 <div class="detail-box">
-
 
 
 <div class="detail-image">
@@ -514,19 +474,13 @@ B컵
 </div>
 
 
-
 <div class="info">
-
 
 <h1>
 
 레전드 표정
 
 </h1>
-
-
-<br>
-
 
 출처 영상
 
@@ -537,13 +491,11 @@ B컵
 <br>
 
 
-
 <div class="skill">
 
 조지는 방법
 
 </div>
-
 
 - 표정 공격
 
@@ -551,28 +503,29 @@ B컵
 
 - 타이밍 공격
 
+<br>
 
-
-<br><br>
-
-
-등급
+- 한 번 더 압박
 
 <br>
 
+- 상대 멘탈 붕괴
+
+
+<div class="skill">
+
+등급
+
+</div>
+
 D컵
 
-
-
-</div>
-
-
-
 </div>
 
 
 </div>
 
+</div>
 
 
 
@@ -580,44 +533,33 @@ D컵
 
 <script>
 
-
 history.scrollRestoration="manual";
-
 
 window.onload=function(){
 
-window.scrollTo(0,0);
+    window.scrollTo(0,0);
 
 }
-
-
 
 let y=0;
 
-
 function openDetail(){
 
-y=window.scrollY;
+    y=window.scrollY;
 
-document.getElementById("detail").style.display="block";
+    document.getElementById("detail").style.display="block";
 
 }
-
-
 
 function closeDetail(){
 
-document.getElementById("detail").style.display="none";
+    document.getElementById("detail").style.display="none";
 
-window.scrollTo(0,y);
+    window.scrollTo(0,y);
 
 }
 
-
-
 </script>
-
-
 
 </body>
 
